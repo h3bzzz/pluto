@@ -1,0 +1,66 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    container_name: zookeeper
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    ports:
+      - "2181:2181"
+    volumes:
+      - zookeeper_data:/bitnami/zookeeper
+
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: pluto_kafka
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_MESSAGE_MAX_BYTES=10000000
+      - KAFKA_REPLICA_FETCH_MAX_BYTES=10000000
+    ports:
+      - "9092:9092"
+    volumes:
+      - kafka_data:/bitnami/kafka
+    depends_on:
+      - zookeeper
+
+  topic-creator:
+    image: bitnami/kafka:latest
+    container_name: topic_creator
+    depends_on:
+      - kafka
+      - zookeeper
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      "echo 'Waiting for Kafka to be ready...';
+       until kafka-topics.sh --bootstrap-server kafka:9092 --list > /dev/null 2>&1; do
+         sleep 2;
+       done;
+       echo 'Kafka is ready, creating topics...';
+       kafka-topics.sh --bootstrap-server kafka:9092 --create --topic pluto-network-events --partitions 1 --replication-factor 1 || true;
+       kafka-topics.sh --bootstrap-server kafka:9092 --create --topic pluto-log-events --partitions 1 --replication-factor 1 || true;
+       echo 'Topics created.';
+       sleep 10"
+
+volumes:
+  zookeeper_data:
+    driver: local
+  kafka_data:
+    driver: local

@@ -1,0 +1,187 @@
+SIEM DATA INGESTION SCHEME
+
+1. Type of Data - logs/events/flows/metrics/json/xml/csv
+
+2. Data Ingestion - Filebeat, Logstash, Kafka, Fluentd, Beats, Clickhouse,
+                    Fluentbit, Splunk, Graylog, Telegraf, Fluentd, etc.
+
+
+3. Data Storage - Elasticsearch, InfluxDB, Clickhouse, Splunk, Graylog,
+                  TimescaleDB, postgres, sqlite
+
+4. Data Parsing - Grok, JSON, CSV, XML, Trained ML Models
+
+5. Data Normalization & Indexing - Elasticsearch, InfluxDB, Clickhouse,
+                                   Splunk, Graylog, TimescaleDB, postgres, sqlite
+
+
+6. Data Enrichment - Enrichment of data using external sources like
+                     Maxmind, VirusTotal, OSSINT feeds.
+
+7. Data Visualization - Grafana, Kibana, Tableau, PowerBI, Metabase,
+                        Superset, etc.
+
+
+
+
+Machine Learning Model for SIEM
+
+1. Data Sets -
+  CICIDS 2017
+  CICIDS 2018
+  CICIDS 2019
+  UNSW-NB15
+  NSL-KDD
+  DARPA 1998
+  DARPA 1999
+  CTU-13
+  ADFA IDS Datasets (ADFA-LD for Linux; ADFA-WD for Windows, if available)
+  ISCX IDS 2012
+  CAIDA DDoS and Anonymized Internet Traces
+  MAWILab Dataset
+  Kitsune Dataset
+  Malware Traffic Analysis PCAPs (e.g., from malware-traffic-analysis.net)
+  Bot-IoT Dataset
+  TON_IoT Dataset
+  IoT-23 Dataset
+  EMBER Dataset
+  Drebin Dataset
+
+
+
+  Create a Machine Learning Model for SIEM using the above datasets.
+  Use the following algorithms for the model:
+  - Random Forest
+  - Decision Trees
+  - Gradient Boosting
+  - XGBoost
+  - LightGBM
+  - CatBoost
+  - Logistic Regression
+  - K-Nearest Neighbors
+  - Support Vector Machines
+  - Neural Networks
+  - Naive Bayes
+  - K-Means Clustering
+  - DBSCAN
+  - Hierarchical Clustering
+  - Isolation Forest
+  - One-Class SVM
+  - Autoencoders
+  - LSTM
+  - CNN
+  - GAN
+  - RNN
+  - Transformer
+  - BERT
+  - GPT-3
+
+  Evaluate the model using the following metrics:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-Score
+  - ROC-AUC
+  - PR-AUC
+  - Confusion Matrix
+  - ROC Curve
+  - Precision-Recall Curve
+  - Feature Importance
+  - SHAP Values
+  - Model Explainability
+  - Model Interpretability
+  - Model Fairness
+  - Model Robustness
+  - Model Security
+  - Model Privacy
+  - Model Compliance
+  - Model Governance
+  - Model Monitoring
+  - Model Management
+  - Model Deployment
+  - Model Serving
+  - Model Scaling
+  - Model Optimization
+  - Model Tuning
+  - Model Selection
+  - Model Evaluation
+  - Model Comparison
+  - Model Visualization
+
+  Deploy the model using the following platforms:
+  - not AWS
+  - not Azure
+  - not GCP
+  - not IBM Cloud
+  - not Oracle Cloud
+  - not Alibaba Cloud
+  - Grafana Cloud
+  - We want open source so we will use:
+    - Kubernetes
+    - Docker
+    - Helm
+    - Prometheus
+    - Grafana
+    - Loki
+
+  Monitor the model using the following tools:
+  - Prometheus
+  - Grafana
+  - Loki
+
+  Scale the model using the following tools:
+  - Kubernetes
+  - Docker
+  - Helm
+
+  Optimize the model using the following techniques:
+  - Hyperparameter Tuning
+  - Grid Search
+  - Random Search
+  - Bayesian Optimization
+  - Genetic Algorithms
+  - Neural Architecture Search
+  - AutoML
+  - Model Compression
+  - Model Quantization
+  - Model Pruning
+  - Model Distillation\
+  - Model Ste
+
+  Tune the model using the following methods:
+  - Cross-Validation
+  - Stratified K-Fold
+  - Time Series Split
+  - Group K-Fold
+  - Leave-One-Out
+  - Leave-P-Out
+  - Shuffle Split
+  - Stratified Shuffle Split
+  - Predefined Split
+  - Randomized Search CV
+  - Grid Search CV
+  - Bayesian Optimization
+  - Genetic Algorithms
+  - Neural Architecture Search
+
+  Select the best model using the following criteria:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-Score
+  - ROC-AUC
+  - PR-AUC
+  - Confusion Matrix
+  - ROC Curve
+  - Precision-Recall Curve
+  - Feature Importance
+  - SHAP Values
+  - Model Explainability
+  - Model Interpretability
+  - Model Fairness
+  - Model RobustnESS
+  - Model Security
+  - Model Privacy
+  - Model Compliance
+
+
