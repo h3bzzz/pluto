@@ -1,4 +1,4 @@
-[pluto-dash](https://github.com/user-attachments/assets/957b02c4-3360-40ec-b2b6-c5c2da6708ef)
+[banner](https://github.com/user-attachments/assets/957b02c4-3360-40ec-b2b6-c5c2da6708ef)
 
 # Pluto - Network Monitoring System!
 
