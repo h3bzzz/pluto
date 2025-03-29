@@ -1,4 +1,4 @@
-[Pluto's Dashboard](https://github.com/user-attachments/assets/957b02c4-3360-40ec-b2b6-c5c2da6708ef)
+[banner](https://photos.google.com/photo/AF1QipNZFeyVDlbqgTRM0B_ZnTkutBeyowosQIRz_ZMc)
 
 # Pluto - Network Monitoring System!
 
