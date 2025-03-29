@@ -1,5 +1,5 @@
 # Pluto - Network Monitoring System
-Microservices are fun - Microservices are easy not ! 
+Microservices are fun - Microservices are easy... well this one is ! 
 
 Pluto is a  network monitoring system built using Go and React. It captures, processes, and visualizes network traffic data in real-time.
 
