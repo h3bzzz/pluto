@@ -1,4 +1,7 @@
-# Pluto - Network Monitoring System
+[pluto-dash](https://github.com/user-attachments/assets/957b02c4-3360-40ec-b2b6-c5c2da6708ef)
+
+# Pluto - Network Monitoring System!
+
 Microservices are fun - Microservices are easy... well this one is ! 
 
 Pluto is a  network monitoring system built using Go and React. It captures, processes, and visualizes network traffic data in real-time.
