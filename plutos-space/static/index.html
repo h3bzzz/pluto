@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluto Network Monitor</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pluto Network Monitor</h1>
+            <div class="connection-status">
+                <span id="connection-indicator"></span>
+                <span id="connection-text">Disconnected</span>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#dashboard" class="active">Dashboard</a></li>
+                <li><a href="#packets">Packets</a></li>
+                <li><a href="#alerts">Alerts</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="dashboard-view" class="view active">
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <h3>Packets</h3>
+                        <p id="packet-count">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Unique Sources</h3>
+                        <p id="unique-sources">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Unique Destinations</h3>
+                        <p id="unique-destinations">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Traffic Volume</h3>
+                        <p id="traffic-volume">0 KB</p>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h3>Protocol Distribution</h3>
+                        <canvas id="protocol-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Traffic Timeline</h3>
+                        <canvas id="timeline-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h3>Top Source IPs</h3>
+                        <div id="top-sources" class="data-table"></div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Top Destination IPs</h3>
+                        <div id="top-destinations" class="data-table"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="packets-view" class="view">
+                <h2>Network Packets</h2>
+                <div class="filter-controls">
+                    <input type="text" id="filter-src-ip" placeholder="Source IP">
+                    <input type="text" id="filter-dst-ip" placeholder="Destination IP">
+                    <select id="filter-protocol">
+                        <option value="">All Protocols</option>
+                    </select>
+                    <button id="apply-filters">Apply Filters</button>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Source IP</th>
+                            <th>Dest IP</th>
+                            <th>Protocol</th>
+                            <th>Source Port</th>
+                            <th>Dest Port</th>
+                            <th>Size</th>
+                        </tr>
+                    </thead>
+                    <tbody id="packets-table-body">
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prev-page">Previous</button>
+                    <span id="page-info">Page 1 of 1</span>
+                    <button id="next-page">Next</button>
+                </div>
+            </section>
+
+            <section id="alerts-view" class="view">
+                <h2>Security Alerts</h2>
+                <div class="alert-filters">
+                    <select id="alert-severity">
+                        <option value="">All Severities</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <input type="text" id="alert-search" placeholder="Search...">
+                </div>
+                <div id="alerts-container">
+                </div>
+            </section>
+
+            <section id="analysis-view" class="view">
+                <h2>Network Analysis</h2>
+                <div class="analysis-tools">
+                    <div class="tool-card">
+                        <h3>Traffic Patterns</h3>
+                        <canvas id="traffic-pattern-chart"></canvas>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Geographic Distribution</h3>
+                        <div id="geo-map">
+                        </div>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Protocol Analysis</h3>
+                        <canvas id="protocol-details-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Pluto Network Monitor &copy; 2026</p>
+        </footer>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html> 
