@@ -100,6 +100,8 @@ The server provides the following REST API endpoints:
 
 The server also provides a WebSocket endpoint at `/ws` for real-time updates.
 
+TODO: Yara implementation and Packet Analysis through Signature and Heuristic Behavioral Detection. 
+
 Thanks for reading h3bzzz
 ## License
 
